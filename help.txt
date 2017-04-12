@@ -1,0 +1,19 @@
+User can perform get, post and help command:
+_______________________________________________________________________________________
+
+"Post" command put data(message) on server to the properly queue, if queue is not send as param use default queue(0)
+Example :
+client.py post --message="mess1" --queue="8" - post message "mess1" to the queue number "8"
+client.py post --message="mess1" - post message "mess1" to the queue number "0"
+_____________________________________________________________________________________
+
+"Get" command get data(message) from server and afterwards delete this data, if queue is not send as param use default queue(0),
+if queue is empty return message about it
+Example :
+client.py get --queue="3" - get data from queue number 3 and after delete this message from queue
+client.py get - get data from queue number 0 and after delete this message from queue
+_______________________________________________________________________________________
+
+"Help" command display help file
+Example:
+client.py help - display info from help.txt file

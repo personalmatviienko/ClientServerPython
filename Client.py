@@ -1,3 +1,5 @@
+import os
+
 import requests
 import argparse
 from urllib.parse import urlencode
@@ -21,6 +23,11 @@ def postRequest(message, queue):
     return response
 
 
+def displayHelpInfo():
+    file = open(os.getcwd() + "/help.txt", "r")
+    print(file.read())
+
+
 def main():
     parser = argparse.ArgumentParser()
 
@@ -33,9 +40,9 @@ def main():
         getRequest(args.queue)
     if args.action == "post":
         postRequest(args.message, args.queue)
+    if args.action == "help":
+        displayHelpInfo()
+
 
 if __name__ == "__main__":
     main()
-
-
-
